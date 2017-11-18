@@ -28,7 +28,7 @@
 #define T_DEFAULT      500      // catchall
 
 #define T_IRQ0          32      // IRQ 0 corresponds to int T_IRQ
-
+#define IRQ_OFFSET      32      // IRQ 0 corresponds to in
 #define IRQ_TIMER        0
 #define IRQ_KBD          1
 #define IRQ_COM1         4
