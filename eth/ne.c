@@ -8,6 +8,43 @@
 // DP8390 Documents: http://www.national.com/ds/DP/DP8390D.pdf
 
 // NICの接続チェックとMACアドレスの取得。
+
+ void
+insb(int port, void*addr, int cnt)
+{
+  asm volatile("cld; rep insb" :
+               "=D" (addr), "=c" (cnt):
+               "d" (port), "0" (addr), "1" (cnt):
+               "memory", "cc");
+}
+
+ void
+insw(int port, void*addr, int cnt)
+{
+  asm volatile("cld; rep insw" :
+               "=D" (addr), "=c" (cnt):
+               "d" (port), "0" (addr), "1" (cnt):
+               "memory", "cc");
+}
+
+ void
+outsb(int port, const void* addr, int cnt)
+{
+  asm volatile("cld; rep outsb" :
+               "=S" (addr), "=c" (cnt):
+               "d" (port), "0" (addr), "1" (cnt) :
+               "cc");
+}
+
+ void
+outsw(int port, const void*addr, int cnt)
+{
+  asm volatile("cld; rep outsw" :
+               "=S" (addr), "=c" (cnt) :
+               "d" (port), "0" (addr), "1" (cnt) :
+               "cc");
+}
+
 int
 ne_probe(ne_t* ne)
 {

@@ -10,7 +10,7 @@ char *argv[] = { "sh", 0 };
 int
 main(void)
 {
-  int pid, wpid;
+  int pid, wpid, fd;
 
   if(open("console", O_RDWR) < 0){
     mknod("console", 1, 1);

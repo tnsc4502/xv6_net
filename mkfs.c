@@ -6,6 +6,9 @@
 #include <assert.h>
 #include "types.h"
 #include "fs.h"
+
+#undef stat
+
 #include "stat.h"
 
 int nblocks = 995;
@@ -27,6 +30,10 @@ void rinode(uint inum, struct dinode *ip);
 void rsect(uint sec, void *buf);
 uint ialloc(ushort type);
 void iappend(uint inum, void *p, int n);
+
+/*#define O_RDWR 0x2
+#define O_TRUNC 0x1000
+#define O_CREAT 0x100*/
 
 // convert to intel byte order
 ushort

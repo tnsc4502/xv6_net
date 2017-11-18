@@ -1,8 +1,8 @@
 #define T_DIR  1   // Directory
 #define T_FILE 2   // File
 #define T_DEV  3   // Special device
-
-struct stat {
+#undef stat
+struct statv6 {
   short type;  // Type of file
   int dev;     // Device number
   uint ino;    // Inode number on device

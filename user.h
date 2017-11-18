@@ -1,4 +1,4 @@
-struct stat;
+struct statv6;
 
 // system calls
 int fork(void);
@@ -13,7 +13,7 @@ int exec(char*, char**);
 int open(char*, int);
 int mknod(char*, short, short);
 int unlink(char*);
-int fstat(int fd, struct stat*);
+int fstat(int fd, struct statv6*);
 int link(char*, char*);
 int mkdir(char*);
 int chdir(char*);
@@ -23,7 +23,7 @@ char* sbrk(int);
 int sleep(int);
 
 // ulib.c
-int stat(char*, struct stat*);
+int stat(char*, struct statv6*);
 char* strcpy(char*, char*);
 void *memmove(void*, void*, int);
 char* strchr(const char*, char c);

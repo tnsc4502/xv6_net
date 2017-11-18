@@ -5,6 +5,7 @@
 #include "../traps.h"
 #include "ne.h"
 #include "eth.h"
+#include "../dev.h"
 
 static ne_t ne;
 

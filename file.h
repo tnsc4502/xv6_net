@@ -11,7 +11,7 @@ struct file {
 
 // in-core file system types
 
-struct inode {
+/*struct inode {
   uint dev;           // Device number
   uint inum;          // Inode number
   int ref;            // Reference count
@@ -22,8 +22,8 @@ struct inode {
   short minor;
   short nlink;
   uint size;
-  uint addrs[NDIRECT+1];
-};
+  uint addrs[12+1];
+};*/
 
 #define I_BUSY 0x1
 #define I_VALID 0x2
@@ -31,14 +31,14 @@ struct inode {
 
 // device implementations
 
-struct devsw {
+/*struct devsw {
   int (*read)(struct inode*, char*, int);
   int (*write)(struct inode*, char*, int);
   // traditionally, 3rd argument type is 'char*', but use 'void*' in this time.
   int (*ioctl)(struct inode*, int request, void* argp);
-};
+};*/
 
-extern struct devsw devsw[];
+//extern struct devsw devsw[];
 
 #define CONSOLE 1
 #define ETHERNET 2         // Major

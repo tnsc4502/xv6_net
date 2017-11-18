@@ -32,7 +32,7 @@ main(void)
   iinit();         // inode cache
   ideinit();       // disk
 
-  ethinit();       // ethernet
+  //ethinit();       // ethernet
   if(!ismp)
     timerinit();   // uniprocessor timer
   userinit();      // first user process

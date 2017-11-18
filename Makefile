@@ -25,10 +25,7 @@ OBJS = \
 	trap.o\
 	uart.o\
 	vectors.o\
-
-	vm.o\
-	eth/ne.o\
-	eth/eth.o\
+	
 
 # Cross-compiling (e.g., on Mac OS X)
 #TOOLPREFIX = i386-jos-elf-

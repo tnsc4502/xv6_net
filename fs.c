@@ -383,7 +383,7 @@ itrunc(struct inode *ip)
 
 // Copy stat information from inode.
 void
-stati(struct inode *ip, struct stat *st)
+stati(struct inode *ip, struct statv6 *st)
 {
   st->dev = ip->dev;
   st->ino = ip->inum;
